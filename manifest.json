@@ -28,6 +28,9 @@
             "js": [
                 "lib/jquery.min.js",
                 "content-scripts/content.js"
+            ],
+            "css": [
+                "content.css"
             ]
         }
     ],

@@ -1,0 +1,26 @@
+/* CSS to style the new div with id 'dropbox' */
+#dropbox {
+    /* Background color */
+    background-color: #f0f0f0;
+  
+    /* Width and height */
+    width: 200px;
+    height: 100px;
+  
+    /* Positioning */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* Border and shadow */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+    /* Text styles */
+    font-size: 16px;
+    text-align: center;
+    line-height: 100px;
+    color: #333;
+  }
+  
