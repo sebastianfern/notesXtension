@@ -1,24 +1,10 @@
-// Copyright 2022 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
+// background.js
 chrome.runtime.onInstalled.addListener(() => {
     chrome.action.setBadgeText({
         text: 'OFF'
     });
 });
 
-// When the user clicks on the extension action
 chrome.action.onClicked.addListener(async (tab) => {
     // We retrieve the action badge to check if the extension is 'ON' or 'OFF'
     const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
@@ -37,5 +23,14 @@ chrome.action.onClicked.addListener(async (tab) => {
             target: { tabId: tab.id },
             files: ['content-scripts/content.js'],
         });
+    }
+});
+
+// Listen for messages from popup.js
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.type === 'googleSignInSuccess') {
+        // Handle the Google Sign-In success, use message.data to get the authentication token or user information
+        console.log('Google Sign-In Success:', message.data);
+        // Perform further actions in your extension based on the sign-in data
     }
 });

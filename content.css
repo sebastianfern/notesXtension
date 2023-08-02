@@ -1,26 +1,84 @@
 /* CSS to style the new div with id 'dropbox' */
 #dropbox {
-    /* Background color */
-    background-color: #f0f0f0;
-  
-    /* Width and height */
-    width: 200px;
-    height: 100px;
-  
-    /* Positioning */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    /* Border and shadow */
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  
-    /* Text styles */
-    font-size: 16px;
-    text-align: center;
-    line-height: 100px;
-    color: #333;
-  }
-  
+  /* Background color */
+  background-color: #f0f0f0;
+
+  /* Width and height */
+  z-index: 10000;
+  width: 25vw;
+  height: 100vh;
+
+  /* Positioning */
+  position: fixed;
+  right: calc(2px + .2vw);
+  bottom: calc(2px + .2vw);
+
+  /* Border and shadow */
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Text styles */
+  font-size: 16px;
+  text-align: center;
+  line-height: 100px;
+  color: #333;
+}
+
+/* Additional styles for elements inside #dropbox (using their classes from content.html) */
+.start-screen {
+  /* Use flexbox to center the elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically */
+  height: 100vh; /* set the height of the container to take up the full viewport height */
+}
+
+.center {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh; /* Set the height to 10% of the viewport height */
+  margin-bottom: 10px;
+  border-bottom: none; /* Remove the thin line under .center */
+  line-height: 1; /* Set line-height to 1 to remove extra spacing */
+}
+
+.input-field {
+width: 80%;
+max-width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.submit-button {
+background-color: #007bff;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 10px;
+}
+
+.submit-button:hover {
+background-color: #0056b3;
+}
+
+#submitted-value {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 10vh; /* Position the #submitted-value element just below .center (height of .center is 10vh) */
+  left: 0;
+  right: 0;
+  margin-bottom: 20px;
+  border-bottom: none; /* Remove the thin line under #submitted-value */ 
+}
+
+
+
+
